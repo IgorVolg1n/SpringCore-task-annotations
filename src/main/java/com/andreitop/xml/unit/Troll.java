@@ -2,6 +2,7 @@ package com.andreitop.xml.unit;
 
 import com.andreitop.xml.mount.Mount;
 import com.andreitop.xml.mount.Wolf;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -32,14 +33,17 @@ public class Troll implements Unit {
         this.creationDate = creationDate;
     }
 
+    @Autowired
     public void setListOfMounts(List<Mount> listOfMounts) {
         this.listOfMounts = listOfMounts;
     }
 
+    @Autowired
     public void setSetOfMounts(Set<Mount> setOfMounts) {
         this.setOfMounts = setOfMounts;
     }
 
+    @Autowired
     public void setMapOfMounts(Map<String, Mount> mapOfMounts) {
         this.mapOfMounts = mapOfMounts;
     }
