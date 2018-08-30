@@ -3,6 +3,7 @@ package com.andreitop.xml.unit;
 import com.andreitop.xml.mount.Mount;
 import com.andreitop.xml.mount.Wolf;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.*;
@@ -34,7 +35,7 @@ public class Troll implements Unit {
     }
 
     @Autowired
-    public void setListOfMounts(List<Mount> listOfMounts) {
+    public void setListOfMounts(@Qualifier("listOfMounts") List<Mount> listOfMounts) {
         this.listOfMounts = listOfMounts;
     }
 
