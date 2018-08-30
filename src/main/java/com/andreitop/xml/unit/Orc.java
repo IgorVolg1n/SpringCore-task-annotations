@@ -1,14 +1,19 @@
 package com.andreitop.xml.unit;
 
 import com.andreitop.xml.mount.Mount;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component("trall")
 public class Orc implements Unit {
 
     private Mount mount;
     private String weapon;
     private int colorCode;
 
-    public Orc(Mount mount) {
+    @Autowired
+    public Orc(@Qualifier("frostWolf") Mount mount) {
         this.mount = mount;
     }
 
