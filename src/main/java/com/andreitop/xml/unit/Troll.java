@@ -30,7 +30,8 @@ public class Troll implements Unit {
         return creationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
+    @Autowired
+    public void setCreationDate(@Qualifier("creationDate") Date creationDate) {
         this.creationDate = creationDate;
     }
 
