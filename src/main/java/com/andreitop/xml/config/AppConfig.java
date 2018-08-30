@@ -9,7 +9,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Configuration
 @ComponentScan(basePackages = "com.andreitop.xml")
@@ -32,5 +34,13 @@ public class AppConfig {
         mountList.add(wolf);
         mountList.add(null);
         return mountList;
+    }
+
+    @Bean
+    public Map<String, Mount> mapOfMounts(@Qualifier("shadowTiger") Tiger tiger, @Qualifier("frostWolf") Wolf wolf) {
+        Map<String, Mount> mountMap = new HashMap<>();
+        mountMap.put("m1", wolf);
+        mountMap.put("m2", tiger);
+        return mountMap;
     }
 }

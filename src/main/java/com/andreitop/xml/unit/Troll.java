@@ -45,7 +45,7 @@ public class Troll implements Unit {
     }
 
     @Autowired
-    public void setMapOfMounts(Map<String, Mount> mapOfMounts) {
+    public void setMapOfMounts(@Qualifier("mapOfMounts") Map<String, Mount> mapOfMounts) {
         this.mapOfMounts = mapOfMounts;
     }
 
