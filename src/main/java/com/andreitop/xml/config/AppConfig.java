@@ -17,7 +17,7 @@ import java.util.*;
 
 @Configuration
 @ComponentScan(basePackages = "com.andreitop.xml")
-@PropertySource("classpath:config/heroes.properties")
+@PropertySource("config/heroes.properties")
 public class AppConfig {
 
     @Autowired
@@ -55,5 +55,10 @@ public class AppConfig {
         String stringDate = environment.getProperty("character.created");
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
         return df.parse(stringDate);
+    }
+
+    @Bean
+    public int colorCode() {
+        return java.util.concurrent.ThreadLocalRandom.current().nextInt(1, 10);
     }
 }

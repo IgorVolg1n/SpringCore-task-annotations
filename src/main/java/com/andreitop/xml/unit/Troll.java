@@ -22,7 +22,8 @@ public class Troll implements Unit {
         return colorCode;
     }
 
-    public void setColorCode(int colorCode) {
+    @Autowired
+    public void setColorCode(@Qualifier("colorCode") int colorCode) {
         this.colorCode = colorCode;
     }
 
