@@ -36,6 +36,7 @@ public class Orc implements Unit {
         return colorCode;
     }
 
+    @Autowired
     public void setColorCode(@Value("9") int colorCode) {
         this.colorCode = colorCode;
     }
